@@ -23,7 +23,6 @@ public class MainApp extends Application {
 
         showPersonOverview();
     }
-
     /**
      * Initializes the root layout.
      */
