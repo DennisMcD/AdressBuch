@@ -20,15 +20,15 @@ public class MainApp extends Application {
     private BorderPane rootLayout;
     
     /**
-     * The data as an observable list of Persons.
+     * Daten als observable list of Persons - neue Collection Klasse.
      */
     private ObservableList<Person> personData = FXCollections.observableArrayList();
 
     /**
-     * Constructor
+     * Konstructor
      */
     public MainApp() {
-        // Add some sample data
+        // Beispieldaten
         personData.add(new Person("Hans", "Muster"));
         personData.add(new Person("Ruth", "Mueller"));
         personData.add(new Person("Heinz", "Kurz"));
@@ -40,8 +40,12 @@ public class MainApp extends Application {
         personData.add(new Person("Martin", "Mueller"));
     }
 
+    
     /**
-     * Returns the data as an observable list of Persons. 
+     * Getter von Observable list of Persons ausgeben.
+     * A list that enables listeners to track changes when they occur
+     * We are working with JavaFX view classes that need to be informed about any changes made to the list of persons. 
+     * This is important, since otherwise the view would not be in sync with the data. 
      * @return
      */
     public ObservableList<Person> getPersonData() {

@@ -12,10 +12,13 @@ import javafx.beans.property.StringProperty;
 /**
  * Model class for a Person.
  *
- * @author Marco Jakob
+ * 
  */
-public class Person {
 
+
+public class Person {
+	
+	//Variablen der Person
     private final StringProperty firstName;
     private final StringProperty lastName;
     private final StringProperty street;
@@ -24,19 +27,22 @@ public class Person {
     private final ObjectProperty<LocalDate> birthday;
 
     /**
-     * Default constructor.
+     * Standard-Konstruktor
      */
     public Person() {
+    	//leere Strings
         this(null, null);
     }
 
     /**
-     * Constructor with some initial data.
+     * Konstruktor mit Vor- und Nachname
      * 
      * @param firstName
      * @param lastName
      */
     public Person(String firstName, String lastName) {
+    	//A Property allows us, for example, to automatically be notified when the lastName or any other variable is changed. 
+    	//This helps us keep the view in sync with the data. 
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
 
@@ -47,6 +53,7 @@ public class Person {
         this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
     }
 
+    // Getter und setter
     public String getFirstName() {
         return firstName.get();
     }

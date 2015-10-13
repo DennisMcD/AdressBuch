@@ -1,5 +1,10 @@
 package ch.makery.address.view;
 
+/*
+ * We must put it in the same package as the PersonOverview.fxml, 
+ * otherwise the SceneBuilder won't find it.
+ */
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -8,6 +13,12 @@ import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
 
 public class PersonOverviewController {
+	
+	/*
+	 * We'll add some instance variables that give us access to the table and the labels inside the view. The fields and some methods have a special @FXML annotation. This is necessary for the fxml file to have access to private fields and private methods. 
+	 * After we have everything set up in the fxml file, the application will automatically fill the variables when the fxml file is loaded. 
+	 */
+	
     @FXML
     private TableView<Person> personTable;
     @FXML
@@ -28,11 +39,12 @@ public class PersonOverviewController {
     @FXML
     private Label birthdayLabel;
 
+    
     // Reference to the main application.
     private MainApp mainApp;
 
     /**
-     * The constructor.
+     * 
      * The constructor is called before the initialize() method.
      */
     public PersonOverviewController() {
@@ -54,6 +66,7 @@ public class PersonOverviewController {
      * 
      * @param mainApp
      */
+    
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
 
